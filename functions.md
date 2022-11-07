@@ -45,12 +45,13 @@ para su evaluación
 es lo que se conoce como un sistema de metaconstrucción. 
 No se utiliza para construir (generar, *build* en inglés) el programa ejecutable de una aplicación sino
 que produce ficheros de proyecto nativos para la plataforma de destino. 
-Por ejemplo, CMake en Windows generará una solución para Visual Studio; 
-en Linux generará un fichero Makefile; 
+Por ejemplo, CMake en Linux generará un fichero Makefile; 
+en Windows generará una solución para Visual Studio; 
 en macOS generará un proyecto para XCode y así sucesivamente. 
-Eso es lo que la palabra *meta* indica: CMake construye sistemas de construcción 
-(*builders*). 
-La herramienta `make` es un sistema de construcción, posiblemente el más común.
+Eso es lo que la palabra *meta* indica: CMake construye sistemas de construcción (*builders*). 
+La herramienta `make` que ya se ha estudiado, es un sistema de construcción, posiblemente el más común, y así
+en *Informática Básica* se utilizará CMake para construir un fichero Makefile con el que se compilará cada uno
+de los proyectos (programas) que se desarrollen.
 
 Un proyecto basado en CMake siempre contiene un fichero `CMakeLists.txt`
 que describe cómo se estructura el proyecto, la lista de ficheros 
@@ -58,7 +59,7 @@ de código fuente que se ha de compilar, lo que CMake debe generar a partir de �
 Se trata en definitiva de un fichero de configuración para la herramienta CMake.
 CMake leerá las instrucciones de ese fichero y producirá el resultado deseado. 
 
-Una característica positiva de CMake es el llamado "out-of-source build". 
+Una característica positiva de CMake es el llamado "*out-of-source build*". 
 Cualquier fichero requerido para la construcción final, incluyendo los ejecutables, 
 será almacenado en un directorio de construcción separado (habitualmente llamado `build/`). 
 Esto evita que el directorio de origen que contiene el código fuente se llene de 
@@ -69,7 +70,7 @@ CMake es una herramienta muy potente que admite multitud de opciones.
 En 
 [la documentación](https://cmake.org/cmake/help/latest/index.html) 
 de la herramienta se pueden estudiar en profundidad estas opciones, pero para la utilización que perseguimos
-realizar en esta asignatura bastará con que estudie detenidamente 
+realizar en *Informática Básica* bastará con que estudie detenidamente 
 [este breve tutorial](https://www.internalpointers.com/post/modern-cmake-beginner-introduction).
 
 En el directorio raíz del repositorio de esta práctica hallará un subdirectorio `fibonacci_sum` con el
