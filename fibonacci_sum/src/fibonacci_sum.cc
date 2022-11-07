@@ -18,9 +18,7 @@
  */
 
 #include <iostream>
-
 #include "fibonacci_sum.h"    
-
 
 /** Devuelve el valor de la suma de todos los términos de valor par de la serie de
  *  Fibonacci menores que kLimit
