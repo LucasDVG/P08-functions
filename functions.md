@@ -69,13 +69,12 @@ el directorio destino de la compilación (directorio `build`) y listo.
 CMake es una herramienta muy potente que admite multitud de opciones.
 En 
 [la documentación](https://cmake.org/cmake/help/latest/index.html) 
-de la herramienta se pueden estudiar en profundidad estas opciones, pero para la utilización que perseguimos
+de la herramienta se pueden estudiar en profundidad estas opciones, pero para la utilización que se propone
 realizar en *Informática Básica* bastará con que estudie detenidamente 
 [este breve tutorial](https://www.internalpointers.com/post/modern-cmake-beginner-introduction).
 
 En el directorio raíz del repositorio de esta práctica hallará un subdirectorio `fibonacci_sum` con el
 siguiente contenido:
-
 ```
   fibonacci_sum
   ├── CMakeLists.txt             // Fichero de configuración para CMake
@@ -89,7 +88,7 @@ siguiente contenido:
       ├── tools.cc
       └── tools.h
 ```
-Esa estructura de directorios (a la que se añadirán los directorios `build` y -opcionalmente `lib`-)
+Esa estructura de directorios (a la que se añadirán los directorios `build` -y opcionalmente `lib`-)
 es habitual en proyectos de desarrollo de software.
 En este ejemplo se ha tomado la aplicación `fibonacci_sum` que calcula la suma de términos pares de la serie
 de Fibonacci y se ha fragmentado la aplicación en 5 ficheros de código (`*.cc` y `*.h`).
@@ -108,9 +107,9 @@ $ cmake ..
 $ make
 ```
 
-El comando `cmake`, usando el fichero de configuración `CMakeLists.txt`, creará en el directorio `build` el fichero `Makefile`
-que utiliza el comando `make` para construir la aplicación, cuyo programa binario `fibonacci_sum` se crea
-asimismo en el directorio `build`.
+El cuarto de esos comandos, `cmake`, usando el fichero de configuración `CMakeLists.txt`, creará en el 
+directorio `build` el fichero `Makefile` que utiliza el comando `make` para construir la aplicación, 
+cuyo programa binario `fibonacci_sum` se crea asimismo en el directorio `build`.
 
 Experimente con este fichero de configuración entregado, `CMakeLists.txt` para adaptarlo a cada uno
 de sus propios proyectos (ejercicios de la práctica).
