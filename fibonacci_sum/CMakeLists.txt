@@ -4,7 +4,7 @@
 # Informática Básica
 #
 # @author F. de Sande
-# @date 18 Jun 2020
+# @date Jun 18 2020
 # @brief CMakeLists.txt example
 # CMakeLists.txt defines the whole build
 # CMake reads CMakeLists.txt sequentially
@@ -26,7 +26,7 @@ project(fibonacci_sum                # Mandatory
     LANGUAGES CXX)
 
 # specify the C++ standard
-set(CMAKE_CXX_STANDARD 14) 						# Use c++14
+set(CMAKE_CXX_STANDARD 17) 						# Use c++17
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # tell cmake to output binaries here:
@@ -54,7 +54,7 @@ add_executable(fibonacci_sum
 target_link_libraries(fibonacci_sum tools)
 
 # Add expected compiler features to a target.
-target_compile_features(fibonacci_sum PRIVATE cxx_std_14)
+target_compile_features(fibonacci_sum PRIVATE cxx_std_17)
 
 # Add compile options to a target.
 target_compile_options(fibonacci_sum PRIVATE -Wall -Wextra -Wpedantic -Weffc++)
