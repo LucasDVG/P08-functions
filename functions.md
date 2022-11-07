@@ -204,31 +204,6 @@ Asigne a cada uno de esos directorios nombres significativos.
 * Automatice la compilación del programa correspondiente a cada ejercicio con un fichero `Makefile`
 independiente para cada programa e inclúyalo en el correspondiente directorio.
 
-
-####################
-
-/**
- * @brief Return true if both parameters are (approximately) equal 
- * @param[in] number1 First number to compare
- * @param[in] number2 Second number to compare
- * @param[in] epsilon Precision for the comparison. It defaults
- * @see https://www.tutorialspoint.com/floating-point-comparison-in-cplusplus
- * @see https://stackoverflow.com/a/17341/12791643
- */
-bool AreEqual(const double number1, const double number2, const double epsilon = 1e-7) {
-  const bool result = fabs(number1 - number2) <= ((fabs(number1) < fabs(number2) ? fabs(number2) : fabs(number1)) * epsilon);
-  // if (result == false) {  // Para depuración
-  //   std::cout << std::setprecision(20);
-  //   std::cout << "Epsilon:    " << epsilon << std::endl;
-  //   std::cout << "Número1:    " << number1 << std::endl;
-  //   std::cout << "Número2:    " << number2 << std::endl;
-  //   std::cout << "Difference: " << fabs(number1 - number2) << std::endl;
-  // }
-  return result;
-}
-
-####################
-
 1. Estudie el programa 
 [`floating-point-arithmetics.cc`](https://github.com/IB-2022-2023/P08-functions/blob/main/floating-point-arithmetics.cc)
 que se incluye en el directorio raíz del repositorio de esta práctica.
@@ -247,8 +222,14 @@ que devuelva `true` o `false` dependiendo de si los números que se le pasan com
 iguales o no.
 El tercer parámetro, que por defecto vale `1e-7` indica un valor muy pequeño que la función tomaría como
 margen de error a la hora de considerar si los números son o no iguales.
+[Este artículo](https://www.tutorialspoint.com/floating-point-comparison-in-cplusplus)
+de *Tutorials Point* o
+[Esta
+entrada](https://stackoverflow.com/questions/17333/what-is-the-most-effective-way-for-float-and-double-comparison/253874#253874)
+de *StackOverflow* podrían resultarle útiles para desarrollar la función.
 
 Pruebe el comportamiento de su función con diferentes pares de valores como entrada.
+
 
 
 
