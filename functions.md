@@ -229,10 +229,31 @@ bool AreEqual(const double number1, const double number2, const double epsilon =
 
 ####################
 
+1. Estudie el programa 
+[`floating-point-arithmetics.cc`](https://github.com/IB-2022-2023/P08-functions/blob/main/floating-point-arithmetics.cc)
+que se incluye en el directorio raíz del repositorio de esta práctica.
+Ese programa define una constante de tipo double, `kOneThird` cuyo valor (0.333) debiera coincidir con el de
+la fracción 1/3.
+Si se imprimen ambos valores por separado, aparentemente son iguales, sin embargo si se utiliza la expresión
+`1.0 / 3 == kOneThird` en una sentencia condicional, ésta resulta ser falsa.
+Este comportamiento se debe a la imprecisión que introduce la representación de los números en punto flotante
+en un ordenador.
+Para profundizar en este fenómeno, estudie el artículo
+[Problem in comparing Floating point numbers and how to compare them correctly?](https://www.geeksforgeeks.org/problem-in-comparing-floating-point-numbers-and-how-to-compare-them-correctly/)
+
+Desarrolle a continuación una función cuya definición sea:
+`bool AreEqual(const double number1, const double number2, const double epsilon = 1e-7);`
+que devuelva `true` o `false` dependiendo de si los números que se le pasan como parámetro son aproximadamente
+iguales o no.
+El tercer parámetro, que por defecto vale `1e-7` indica un valor muy pequeño que la función tomaría como
+margen de error a la hora de considerar si los números son o no iguales.
+
+Pruebe el comportamiento de su función con diferentes pares de valores como entrada.
 
 
 
-1. Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. 
+
+1 Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. 
 ```
 Public test cases
 Input           Output
