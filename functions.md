@@ -40,6 +40,45 @@ para su evaluación
 * Ha realizado todos sus ejercicios en la máquina virtual Ubuntu de la asignatura.
 * Demuestra que es capaz de ejecutar comandos Linux en su VM
 
+### Programas con múltiples ficheros de código
+Conforme los programas se hacen más grandes, es habitual descomponer el programa en varios ficheros con fines organizativos o de reutilización. 
+En un proyecto real de desarrollo de software es común que los programas estén compuestos por cientos o miles
+de ficheros de código fuente.
+Estudie en el tutorial de referencia los apartados:
+* [2.7 — Forward declarations and definitions](https://www.learncpp.com/cpp-tutorial/forward-declarations/)
+* [A multi-file example](https://www.learncpp.com/cpp-tutorial/programs-with-multiple-code-files/)
+de la sección 2.8 del tutorial (omita la parte introductoria relativa a los IDEs).
+* [2.11 — Header files](https://www.learncpp.com/cpp-tutorial/header-files/)
+
+Considere a continuación, como un ejemplo adicional el programa que hallará en el directorio
+[headerSourceSeparation](https://github.com/IB-2022-2023/IB-class-code-examples/tree/master/Tools/cmake/headerSourceSeparation)
+de los ejemplos de código de la asignatura.
+
+Ese programa se compone de tres ficheros: `main.cc`, `tools.cc` y `tools.h`.
+El fichero `Makefile` en ese directorio permite compilar el programa. 
+Ejecute `make` y observe los comandos que se ejecutan para la compilación.
+Examine a continuación el código de todos esos ficheros.
+El programa principal simplemente invoca las funcionas *MakeItRain()* y *MakeItSunny()*.
+Esas funciones se encuentran definidas en el fichero `tools.cc` y sus declaraciones (también llamadas
+prototipos) se incluyen en el fichero `tools.h`.
+Cualquier módulo (fichero `*.cc` con código) que precisara utilizar estas funciones deberá incluir (como se
+hace en `main.cc` el fichero `tools.h` donde se definen declaradas dichas funciones.
+
+Esto no es ni más ni menos que lo que se ha venido haciendo con otros ficheros de cabecera, *header*:
+Cualquier programa C++ que precise utilizar funciones matemáticas como *sin()*, *cos()*, *fabs()*, *exp()*,
+etc. ha de incluir el fichero de cabecera `cmath` (`#include <cmath>`) que es donde se hallan las
+declaraciones de esas funciones.
+Análogamente en el fichero de cabecera `iostream` se hallan declaradas las clases y  funciones necesarias para
+realizar operaciones básicas de entrada/salida.
+En el caso de funciones de librería de C++ las definiciones no se encuentran en ficheros de código fuente
+(`*.cc`) sino que su código binario, que se encuentra en una librería, es añadido al programa final por en enlazador (*linker*) 
+
+La separación en diferentes ficheros de código que presenta este ejemplo académico es muy frecuente en
+proyectos reales de programación, en los que como ya se ha dicho, suelen intervenir cientos o miles de
+ficheros.
+Utilizar herramientas como `make` para la compilación de este tipo de proyectos es fundamental para optimizar
+el proceso de desarrollo.
+
 ### La herramienta `cmake`
 [CMake](https://es.wikipedia.org/wiki/CMake)
 es lo que se conoce como un sistema de metaconstrucción. 
