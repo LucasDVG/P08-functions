@@ -269,7 +269,13 @@ de *StackOverflow* podrían resultarle útiles para desarrollar la función.
 
 Pruebe el comportamiento de su función con diferentes pares de valores como entrada.
 
-2. Escriba un programa `triangle-area.cc` que tome como entrada las longitudes `a`, `b` y `c`de los lados de
+2. Escriba un programa `function-example.cc` que incluya una función que realice el cálculo de la siguiente
+función:
+![Función](function.png)
+
+
+
+3. Escriba un programa `triangle-area.cc` que tome como entrada las longitudes `a`, `b` y `c`de los lados de
 un triángulo y calcule su área utilizando la
 [Fórmula de Herón](https://en.wikipedia.org/wiki/Heron%27s_formula).
 Diseñe una función cuyo nombre sea *Area*, que implemente ese cálculo.
