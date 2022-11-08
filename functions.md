@@ -250,6 +250,15 @@ independiente para cada programa e inclúyalo en el correspondiente directorio.
 la siguiente función matemática de dos variables:
 ![Función](function.png)
 
+```
+Public test cases
+Input           Output
+1 -2              4
+1 -1           3.87298
+0.5 -1         3.74166
+0.5 0.5        2.95804
+```
+
 2. Escriba un programa `change-case.cc`que tome como entrada una cadena de caracteres sin espacios e imprima como salida la
 misma cadena convirtiendo los caracteres que sean letras mayúsculas por minúsculas y viceversa.
 Los caracteres que no sean letras mayúsculas ni minúsculas deberán permanecer inalterados.
