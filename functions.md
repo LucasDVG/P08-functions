@@ -242,8 +242,15 @@ para cada uno de los ejercicios.
 Asigne a cada uno de esos directorios nombres significativos. 
 * Automatice la compilación del programa correspondiente a cada ejercicio con un fichero `Makefile`
 independiente para cada programa e inclúyalo en el correspondiente directorio.
+* Haga que todos los programas tomen su entrada por la línea de comandos y en caso de que se ejecuten sin
+  pasarles el número adecuado de parámetros impriman en pantalla un mensaje indicando el modo correcto de
+  ejecutar el programa.
 
-1. Estudie el programa 
+1. Escriba un programa `function-example.cc` que incluya una función C++ que realice el cálculo de 
+la siguiente función matemática de dos variables:
+![Función](function.png)
+
+2. Estudie el programa 
 [`floating-point-arithmetics.cc`](https://github.com/IB-2022-2023/P08-functions/blob/main/floating-point-arithmetics.cc)
 que se incluye en el directorio raíz del repositorio de esta práctica.
 Ese programa define una constante de tipo double, `kOneThird` cuyo valor (0.333) debiera coincidir con el de
@@ -268,12 +275,6 @@ entrada](https://stackoverflow.com/questions/17333/what-is-the-most-effective-wa
 de *StackOverflow* podrían resultarle útiles para desarrollar la función.
 
 Pruebe el comportamiento de su función con diferentes pares de valores como entrada.
-
-2. Escriba un programa `function-example.cc` que incluya una función que realice el cálculo de la siguiente
-función:
-![Función](function.png)
-
-
 
 3. Escriba un programa `triangle-area.cc` que tome como entrada las longitudes `a`, `b` y `c`de los lados de
 un triángulo y calcule su área utilizando la
