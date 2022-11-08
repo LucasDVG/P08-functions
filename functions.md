@@ -224,7 +224,7 @@ en el sentido de que la función *main()* es una mera *orquestadora* de las func
 devuelven a *main()* el valor que calculan (si fuera el caso).
 
 Incluya en todos sus programas sendas funciones cuya declaración sería:
-```
+``` .cpp
 void PrintProgramPurpose();
 bool CheckCorrectParameters(const int argc, char *argv[], const int kCorrectNumber);
 ```
@@ -269,17 +269,23 @@ de *StackOverflow* podrían resultarle útiles para desarrollar la función.
 
 Pruebe el comportamiento de su función con diferentes pares de valores como entrada.
 
+2. Escriba un programa `triangle-area.cc` que tome como entrada las longitudes `a`, `b` y `c`de los lados de
+un triángulo y calcule su área utilizando la
+[Fórmula de Herón](https://en.wikipedia.org/wiki/Heron%27s_formula).
+Diseñe una función cuyo nombre sea *Area*, que implemente ese cálculo.
 
+Los tres lados del triángulo, `a`, `b`, `c` deben satisfacer la desigualdad triangular: 
+cada uno de los lados no puede ser más largo que la suma de los otros dos.
+Diseñe una función *IsAValidTriangle* que determine si los lados introducidos por el usuario forman un
+triángulo válido o no, y solo calcule su área en caso de ser válido
 
-
-
-1 Escriba un programa que lea un número natural e imprima como salida la suma de los dígitos del número en cuestión. 
 ```
 Public test cases
 Input           Output
-2022              6
-1492             16
-0                 0
+5 5 5            10.82
+3 4 6             5.33
+3.9 6.0 1.2      Not a valid Triangle
+1.9 2 2           1.67
 ```
 
-2. Desarrolle un programa que imprima los N primeros términos de la 
+
