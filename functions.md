@@ -250,7 +250,32 @@ independiente para cada programa e inclúyalo en el correspondiente directorio.
 la siguiente función matemática de dos variables:
 ![Función](function.png)
 
-2. Estudie el programa 
+2. Escriba un programa `change-case.cc`que tome como entrada una cadena de caracteres sin espacios e imprima como salida la
+misma cadena convirtiendo los caracteres que sean letras mayúsculas por minúsculas y viceversa.
+Los caracteres que no sean letras mayúsculas ni minúsculas deberán permanecer inalterados.
+Desarrolle su programa de forma que incluya como mínimo dos funciones y realice un diseño tal que el programa
+se organice en más de un fichero de código fuente (`*.cc`).
+
+```
+Public test cases
+Input           Output
+Abecedario      aBECEDARIO
+PyThon          pYtHON
+AlFa2022        aLfA2022
+```
+
+3. Desarrolle un programa `random_numbers.cc` que tome como entrada dos números naturales `n` y `m` tales que `n < m` y genere
+un número aleatorio real `r` en el intervalo `[n, m]`.
+
+Desarrolle su programa de modo que incluya al menos dos funciones, y que sea una de ellas la que tome como
+parámetros los dos números introducidos por el usuario y devuelva como resultado el número aleatorio.
+
+Para generar números aleatorios en C++ consulte la función `std::rand` por ejemplo en 
+[esta referencia](https://en.cppreference.com/w/cpp/numeric/random/rand).
+ 
+Desarrolle un programa `random_numbers.cc` que tome como entrada dos números naturales `n` y `m` tales que n < m y genere un número aleatorio real r en el intervalo [n, m]. Para generar números aleatorios en C++ consulte la función std::rand por ejemplo en esta referencia.
+
+4. Estudie el programa 
 [`floating-point-arithmetics.cc`](https://github.com/IB-2022-2023/P08-functions/blob/main/floating-point-arithmetics.cc)
 que se incluye en el directorio raíz del repositorio de esta práctica.
 Ese programa define una constante de tipo double, `kOneThird` cuyo valor (0.333) debiera coincidir con el de
@@ -276,7 +301,7 @@ de *StackOverflow* podrían resultarle útiles para desarrollar la función.
 
 Pruebe el comportamiento de su función con diferentes pares de valores como entrada.
 
-3. Escriba un programa `triangle-area.cc` que tome como entrada las longitudes `a`, `b` y `c`de los lados de
+5. Escriba un programa `triangle-area.cc` que tome como entrada las longitudes `a`, `b` y `c`de los lados de
 un triángulo y calcule su área utilizando la
 [Fórmula de Herón](https://en.wikipedia.org/wiki/Heron%27s_formula).
 Diseñe una función cuyo nombre sea *Area*, que implemente ese cálculo.
@@ -294,5 +319,3 @@ Input           Output
 3.9 6.0 1.2      Not a valid Triangle
 1.9 2 2           1.67
 ```
-
-
