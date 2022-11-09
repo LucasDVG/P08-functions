@@ -156,30 +156,6 @@ Puede utilizar este fichero como "plantilla" adaptándolo de ahora en adelante a
 programación en C++.
 No es necesario en principio, que construya librerías propias para sus programas.
 La construcción de una librería se ha incluído en este ejemplo con la finalidad de ilustrar ese proceso.
-################################################################
-
-### Documentación de código 
-
-* Escriba todos los programas de modo que estén estructurados en funciones.
-* Documente cada función de su programa de modo
-que cada una contenga comentarios en las líneas anteriores a su definición en la que se indique
-	1. Una breve descripción de la finalidad de la función
-	2. Para cada uno de sus parámetros se ha de indicar su significado
-	3. Si la función no es void, indicar el significado asimismo de su resultado
-Así el 
-[bloque de comentarios](https://jsdoc.app/tags-description.html)
-que debe preceder a cualquier función (o método) debiera tener una apariencia similar a esta:
-```
-/**
- * Sum numbers in a vector
- *
- * @param values Container whose values are summed
- * @return sum of `values`, or 0.0 if `values` is empty
- */
-double SumValues(const std::vector<double>& values) {
-  ...
-}
-```
 
 ### Material de estudio complementario
 Estudie todo lo que se indica en el epígrafe 
