@@ -117,6 +117,7 @@ siguiente contenido:
 ```
   fibonacci_sum
   ├── CMakeLists.txt             // Fichero de configuración para CMake
+  ├── CMakeLists.txt.simpler     // Otro fichero de configuración más simple
   ├── doc                        // Documentación
   ├── fibonacci.Doxyfile         // Fichero de configuración para Doxygen
   ├── LEE_ME.txt
@@ -151,11 +152,14 @@ directorio `build` el fichero `Makefile` que utiliza el comando `make` para cons
 cuyo programa binario `fibonacci_sum` se crea asimismo en el directorio `build`.
 
 Experimente con este fichero de configuración entregado, `CMakeLists.txt` para adaptarlo a cada uno
-de sus propios proyectos (ejercicios de la práctica).
-Puede utilizar este fichero como "plantilla" adaptándolo de ahora en adelante a cada uno de sus proyectos de
-programación en C++.
+de sus propios proyectos (ejercicios de prácticas).
 No es necesario en principio, que construya librerías propias para sus programas.
 La construcción de una librería se ha incluído en este ejemplo con la finalidad de ilustrar ese proceso.
+
+El fichero `CMakeLists.txt.simpler` que se incluye es más simple que el anterior y en ese caso no genera la
+documentación (Doxygen) del proyecto ni construye ninguna librería que se enlace con el programa final.
+Puede utilizar este fichero (renombrándolo a `CMakeLists.txt`) como "plantilla" adaptándolo de ahora en 
+adelante a cada uno de sus proyectos de programación en C++.
 
 ### Material de estudio complementario
 Estudie todo lo que se indica en el epígrafe 
