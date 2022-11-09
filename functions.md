@@ -247,16 +247,16 @@ independiente para cada programa e inclúyalo en el correspondiente directorio.
   ejecutar el programa.
 
 1. Escriba un programa `function-example.cc` que incluya una función C++ que realice el cálculo de 
-la siguiente función matemática de dos variables:
-![Función](function.png)
+la siguiente función matemática de tres variables:
+![Función](functionG.png)
 
 ```
 Public test cases
 Input           Output
-1 -2              4
-1 -1           3.87298
-0.5 -1         3.74166
-0.5 0.5        2.95804
+3 4 5           -0.349927
+4.0 1.0 7.0      0.210819
+1 2 3           -0.471405
+3 2 10.0         0.8
 ```
 
 2. Escriba un programa `change-case.cc`que tome como entrada una cadena de caracteres sin espacios e imprima como salida la
