@@ -1,4 +1,4 @@
-# Práctica 07. Funciones
+# Práctica 08. Funciones
 
 # Factor de ponderación: 7
 
