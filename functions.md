@@ -248,6 +248,7 @@ independiente para cada programa e inclúyalo en el correspondiente directorio.
 
 1. Escriba un programa `function-example.cc` que incluya una función C++ que realice el cálculo de 
 la siguiente función matemática de tres variables:
+
 ![Función](functionG.png)
 
 ```
