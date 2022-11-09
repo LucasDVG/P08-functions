@@ -7,25 +7,23 @@ Los objetivos de esta práctica son que el alumnado:
 * Sea capaz de resolver problemas sencillos en C++ usando todos los conocimientos adquiridos hasta ahora, 
   y en particular utilizando funciones
 * Diseñe, desarrolle y utilice funciones en sus programas haciendo que sus programas sean modulares
-* Conozca la herramienta CMake y sepa cómo usarla para construir sus programas ejecutables
+* Conozca la herramienta CMake y sea capaz de usarla a nivel básico para construir sus programas ejecutables
 
 ### Rúbrica de evaluacion de esta práctica
 Se señalan a continuación los aspectos más relevantes (la lista no es exhaustiva) que se tendrán en cuenta a la hora de evaluar esta práctica.
 Se comprobará que el alumnado:
 * Conoce los conceptos expuestos en el material de referencia de esta práctica.
-* Ha realizado todos los ejercicios propuestos
-* Es capaz de escribir programas simples en C++ que resuelvan problemas de
-  complejidad similar a los que se han propuesto para esta práctica
-* Es capaz de escribir un fichero CMakeLists.txt para automatizar el proceso de compilación de sus programas.
+* Ha realizado todos los ejercicios propuestos en este enunciado
+* Es capaz de escribir programas simples en C++ que resuelvan problemas de complejidad similar a los que se proponen en este documento
+* Es capaz de escribir un fichero `CMakeLists.txt` para automatizar el proceso de compilación de sus programas con `cmake` y `make`
+* Ha automatizado la compilación de sus programas usando un fichero `Makefile` para cada uno de los programas que desarrolle 
 * Hace que sus programas se estructuren en torno a diferentes funciones (sean modulares)
 * Todos sus programas se estructuran en directorios diferentes para cada "proyecto" haciendo que cada uno de
   ellos contenga un fichero `CMakeLists.txt` con la configuración de despliegue del proyecto.
 * Utiliza en todos sus programas comentarios adecuados en el formato requerido por
 [Doxygen](https://www.doxygen.nl/index.html)
-* Ha automatizado la compilación de sus programas usando un fichero `Makefile`
-  para cada uno de los programas que desarrolle 
-* Acredita que todas las prácticas realizadas hasta la fecha se encuentran alojadas en repositorios
-  privados de [GitHub](https://github.com/).
+* Acredita que todas las prácticas realizadas hasta la fecha se encuentran alojadas en repositorios privados de 
+[GitHub](https://github.com/).
 * Acredita que es capaz de subir programas a la plataforma 
 [Jutge](https://jutge.org/)
 para su evaluación
@@ -41,7 +39,8 @@ para su evaluación
 * Demuestra que es capaz de ejecutar comandos Linux en su VM
 
 ### Programas con múltiples ficheros de código
-Conforme los programas se hacen más grandes, es habitual descomponer el programa en varios ficheros con fines organizativos o de reutilización. 
+Conforme los programas se hacen más grandes, es habitual descomponer el programa en varios ficheros (módulos) con fines organizativos o de reutilización
+del código.
 En un proyecto real de desarrollo de software es común que los programas estén compuestos por cientos o miles
 de ficheros de código fuente.
 Estudie en el tutorial de referencia los apartados:
@@ -62,7 +61,7 @@ El programa principal simplemente invoca las funcionas *MakeItRain()* y *MakeItS
 Esas funciones se encuentran definidas en el fichero `tools.cc` y sus declaraciones (también llamadas
 prototipos) se incluyen en el fichero `tools.h`.
 Cualquier módulo (fichero `*.cc` con código) que precisara utilizar estas funciones deberá incluir (como se
-hace en `main.cc` el fichero `tools.h` donde se definen declaradas dichas funciones.
+hace en `main.cc`) el fichero `tools.h` donde se declaran dichas funciones.
 
 Esto no es ni más ni menos que lo que se ha venido haciendo con otros ficheros de cabecera, *header*:
 Cualquier programa C++ que precise utilizar funciones matemáticas como *sin()*, *cos()*, *fabs()*, *exp()*,
@@ -71,7 +70,8 @@ declaraciones de esas funciones.
 Análogamente en el fichero de cabecera `iostream` se hallan declaradas las clases y  funciones necesarias para
 realizar operaciones básicas de entrada/salida.
 En el caso de funciones de librería de C++ las definiciones no se encuentran en ficheros de código fuente
-(`*.cc`) sino que su código binario, que se encuentra en una librería, es añadido al programa final por en enlazador (*linker*) 
+(`*.cc`) sino que su código binario, que se encuentra en una librería, es añadido al programa final por 
+el enlazador (*linker*), como ya se ha estudiado.
 
 La separación en diferentes ficheros de código que presenta este ejemplo académico es muy frecuente en
 proyectos reales de programación, en los que como ya se ha dicho, suelen intervenir cientos o miles de
@@ -100,10 +100,10 @@ CMake leerá las instrucciones de ese fichero y producirá el resultado deseado.
 
 Una característica positiva de CMake es el llamado "*out-of-source build*". 
 Cualquier fichero requerido para la construcción final, incluyendo los ejecutables, 
-será almacenado en un directorio de construcción separado (habitualmente llamado `build/`). 
-Esto evita que el directorio de origen que contiene el código fuente se llene de 
+será almacenado en un directorio de construcción separado, habitualmente llamado `build/`. 
+Esto evita que el directorio de origen que contiene el código fuente contenga
 ficheros no deseados y hace que sea fácil volver a empezar: sólo hay que eliminar 
-el directorio destino de la compilación (directorio `build`) y listo.
+el directorio destino de la compilación (el directorio `build/`) y listo.
 
 CMake es una herramienta muy potente que admite multitud de opciones.
 En 
@@ -127,7 +127,7 @@ siguiente contenido:
       ├── tools.cc
       └── tools.h
 ```
-Esa estructura de directorios (a la que se añadirán los directorios `build` -y opcionalmente `lib`-)
+Esa estructura de directorios (a la que se añadirán los directorios `build/` -y opcionalmente `lib/`-)
 es habitual en proyectos de desarrollo de software.
 En este ejemplo se ha tomado la aplicación `fibonacci_sum` que calcula la suma de términos pares de la serie
 de Fibonacci y se ha fragmentado la aplicación en 5 ficheros de código (`*.cc` y `*.h`).
@@ -152,6 +152,8 @@ cuyo programa binario `fibonacci_sum` se crea asimismo en el directorio `build`.
 
 Experimente con este fichero de configuración entregado, `CMakeLists.txt` para adaptarlo a cada uno
 de sus propios proyectos (ejercicios de la práctica).
+Puede utilizar este fichero como "plantilla" adaptándolo de ahora en adelante a cada uno de sus proyectos de
+programación en C++.
 No es necesario en principio, que construya librerías propias para sus programas.
 La construcción de una librería se ha incluído en este ejemplo con la finalidad de ilustrar ese proceso.
 ################################################################
@@ -181,60 +183,19 @@ double SumValues(const std::vector<double>& values) {
 
 ### Material de estudio complementario
 Estudie todo lo que se indica en el epígrafe 
-[Comments](https://google.github.io/styleguide/cppguide.html#Comments) 
-de la Guía de Estilo de Google y ponga en práctica todo lo que en ella se propone, usando el formato Doxygen y
-etiquetas JSDoc para todos los comentarios de su código fuente.
+[Functions](https://google.github.io/styleguide/cppguide.html#Functions)
+de la Guía de Estilo de Google y ponga en práctica todo lo que en ella se propone.
+Es normal si encuentra en ese epígrafe algún contenido que aún no ha estudiado: no se preocupe. 
+Centre su atención en aquellos aspectos que ya conozca, para consolidarlos.
 
 Estudie del
 [tutorial de referencia](https://www.learncpp.com/)
 en la asignatura los siguientes apartados:
-* [Comments](https://www.learncpp.com/cpp-tutorial/comments/)
-* El capítulo 2
-[Basics: Functions and Files](https://www.learncpp.com/cpp-tutorial/introduction-to-functions/)
-(completo)
+* [Local variables](https://www.learncpp.com/cpp-tutorial/local-variables/)
+* [Introduction to global variables](https://www.learncpp.com/cpp-tutorial/introduction-to-global-variables/)
+* [Variable shadowing (name hiding)](https://www.learncpp.com/cpp-tutorial/variable-shadowing-name-hiding/)
+* [Scope, duration, and linkage summary](https://www.learncpp.com/cpp-tutorial/scope-duration-and-linkage-summary/)
 * [Command line arguments](https://www.learncpp.com/cpp-tutorial/command-line-arguments/)
-
-### Diseño de los programas
-Recuerde las que se han estudiado como *Buenas Prácticas* a la hora de diseñar sus funciones:
-* El código deberá organizarse en diferentes funciones 
-* Cada función deberá realizar una única tarea y hacerlo correctamente 
-* El identificador de una función debe reflejar claramente lo que la función hace 
-
-Tal como se indica en 
-[How to design your first programs](https://www.learncpp.com/cpp-tutorial/how-to-design-your-first-programs/)
-su código debiera estar organizado en torno a funciones que se invocan desde la función *main()*.
-Así la apariencia habitual de la función principal de cualquier programa debiera ser algo similar a:
-``` .cpp
-int main(int argc, char* argv[]) {
-  PrintProgramPurpose();
-  if (!CheckCorrectParameters(argc, argv, 3)) {
-    return 1;
-  }
-  GetUserInput();
-  GetMathematicalOperation();
-  GetUserInput();
-  CalculateResult();
-  PrintResult();
-
-  return 0;
-}
-```
-en el sentido de que la función *main()* es una mera *orquestadora* de las funciones que componen el programa.
-*main()* pasa a esas funciones los parámetros necesarios para su funcionamiento y las diferentes funciones
-devuelven a *main()* el valor que calculan (si fuera el caso).
-
-Incluya en todos sus programas sendas funciones cuya declaración sería:
-``` .cpp
-void PrintProgramPurpose();
-bool CheckCorrectParameters(const int argc, char *argv[], const int kCorrectNumber);
-```
-La primera de ella se invocará al comienzo de la ejecución para imprimir un mensaje explicativo de
-la finalidad del programa en cuestión.
-La función *CheckCorrectParameters()* devolverá `true` si al programa se le han pasado el número adecuado de
-parámetros por línea de comandos (3 en el ejemplo anterior) y `false` en caso contrario.
-Estude el programa 
-[check-correct-parameters.cc](https://github.com/IB-2022-2023/IB-class-code-examples/blob/master/Functions/check-correct-parameters.cc)
-de los ejemplos de código de las clases de teoría que ilustra el uso de estas dos funciones.
 
 ### Ejercicios
 * Al realizar los ejercicios cree dentro de su repositorio de esta práctica un directorio diferente
@@ -245,6 +206,9 @@ independiente para cada programa e inclúyalo en el correspondiente directorio.
 * Haga que todos los programas tomen su entrada por la línea de comandos y en caso de que se ejecuten sin
   pasarles el número adecuado de parámetros impriman en pantalla un mensaje indicando el modo correcto de
   ejecutar el programa.
+* El código de cada uno de los programas deberá organizarse de forma modular, es decir haciendo uso de funciones 
+* Cada función deberá realizar una única tarea y hacerlo correctamente 
+* El identificador de una función debe reflejar claramente lo que la función hace 
 
 1. Escriba un programa `function-example.cc` que incluya una función C++ que realice el cálculo de 
 la siguiente función matemática de tres variables:
