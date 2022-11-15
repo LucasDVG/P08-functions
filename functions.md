@@ -1,4 +1,4 @@
-# Práctica 08. Funciones
+# Práctica 08. Funciones. CMake.
 
 # Factor de ponderación: 7
 
